@@ -1,17 +1,16 @@
 
-<!-- TODO: add All/Active/Inactive filter here -->
 <div>
     <h2>Extensions List</h2>
-    <button (click)="toggleAll()">All</button>
-    <button (click)="filterActive()">Active</button>
-    <button (click)="filterInactive()">Inactive</button>
+    <button (click)="toggleFilter('all')">All</button>
+    <button (click)="toggleFilter('active')">Active</button>
+    <button (click)="toggleFilter('inactive')">Inactive</button>
 </div>
 
-<ul *ngFor="let extension of tempExtensions">
-    <img src="{{extension.logo}}">
+<ul *ngFor="let extension of displayedExtensions">
+    <img [src]="extension.logo">
     <span class="name">{{extension.name}}</span>
     <span class="desc">{{extension.description}}</span>
-    <span class="button"><button>Remove</button></span>
+    <span class="button" (click)="removeExtension(extension)"><button>Remove</button></span>
     <span class="name">Active: </span>
     <label class="switch"><input type="checkbox" [checked]="extension.isActive" (click)="toggleStatus(extension)"><span class="slider round"></span></label>
     <!-- <span class="active">{{extension.isActive}}</span> -->

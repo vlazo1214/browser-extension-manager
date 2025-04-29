@@ -12,32 +12,30 @@ import { Observable } from 'rxjs';
 export class ExtensionsListComponent implements OnInit {
   constructor(private extensionService: ExtensionService) {}
 
-  allFilter: boolean = true;
-  activeFilter: boolean = false;
-  inactiveFilter: boolean = false;
-
   extensions: Extension[] = [];
-  tempExtensions: Extension[] = [];
+  filterText: 'all' | 'active' | 'inactive' = 'all';
 
   ngOnInit() {
     this.getExtensions();
-    this.tempExtensions = this.extensions;
   }
 
   getExtensions(): void {
     this.extensionService.getExtensions().subscribe(extensions => this.extensions = extensions);
   }
 
-  toggleAll(): void {
-    this.tempExtensions = this.extensions;
+  get displayedExtensions(): Extension[] {
+    switch (this.filterText){
+      case 'active':
+        return this.extensions.filter(ext => ext.isActive);
+      case 'inactive':
+        return this.extensions.filter(ext => !ext.isActive);
+      default:
+        return this.extensions;
+    }
   }
 
-  filterActive(): void {
-    this.tempExtensions = this.extensions.filter(ext => ext.isActive);
-  }
-
-  filterInactive(): void {
-    this.tempExtensions = this.extensions.filter(ext => !ext.isActive);
+  toggleFilter(filter: 'all' | 'active' | 'inactive') {
+    this.filterText = filter;
   }
 
   toggleStatus(extension: Extension): void {
@@ -45,7 +43,8 @@ export class ExtensionsListComponent implements OnInit {
   }
 
   // TODO
-  removeExtension(): void {
-
+  removeExtension(extension: Extension): void {
+    this.extensions = this.extensions.filter(ext => ext !== extension);
+    this.extensionService.removeExtension(extension.id).subscribe();
   }
 }
