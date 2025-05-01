@@ -1,1 +1,105 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+    background-attachment: fixed;
+    margin: 20rem;
+    margin-top: 1rem;
+    /* margin-right: 400px;
+    margin-left: 400px; */
+}
+
+.top-header {
+    background-color: hsl(200, 60%, 99%);
+    padding: 10px;
+    box-shadow: 2px 2px 5px hsl(217, 61%, 90%);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-header img {
+    align-items: left;
+    object-fit: fill;
+    justify-content: flex-start;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    flex: 0 0 auto;
+}
+
+.top-header button {
+    background: url("./assets/images/icon-moon.svg");
+    background-color: hsl(0, 0%, 93%);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    border: none;
+    padding: 25px;
+
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease;
+}
+
+.top-header button:hover {
+    background-color: hsl(0, 0%, 78%);
+}
+
+/* Fonts */
+@font-face {
+    font-family: NotoSansBold;
+    src: url('./assets/fonts/static/NotoSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: NotoSansRegular;
+    src: url('./assets/fonts/static/NotoSans-Regular.ttf') format('truetype') ;
+}
+
+@font-face {
+    font-family: NotoSansMedium;
+    src: url('./assets/fonts/static/NotoSans-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: NotoSansItalic;
+    src: url('./assets/fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf') format('truetype') ;
+}
+
+@font-face {
+    font-family: NotoSansVariable;
+    src: url('./assets/fonts/NotoSans-VariableFont_wdth,wght.ttf') format('truetype');
+}
+
+h1 {
+    font-family: NotoSansMedium;
+    color: hsl(225, 23%, 24%);
+}
+
+h3 {
+    font-family: NotoSansItalic;
+}
+
+h4 {
+    font-family: NotoSansVariable;
+}
+
+p {
+    font-family: NotoSansRegular;
+}
+
+
+h2, .name {
+    font-family: NotoSansBold;
+}
+
+.desc {
+    font-family: NotoSansMedium;
+}
+
+.active {
+    font-family: NotoSansItalic;
+}

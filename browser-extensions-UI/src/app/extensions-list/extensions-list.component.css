@@ -1,22 +1,25 @@
-h2, .name {
-    font-family: NotoSansBold;
+.ext-header {
+  display: flex;
+  justify-content: space-between;
 }
 
-.desc {
-    font-family: NotoSansMedium;
+.ext-toggles {
+  display: flex;
+  justify-content: flex-end;
+  flex: 0;
 }
 
-.active {
-    font-family: NotoSansItalic;
+.ext-toggles button {
+  font-family: NotoSansMedium;
+  text-align: center;
+  display: inline-block;
+  width: auto;
+  height: 20px;
+  padding: 20px;
+  padding-bottom: 25px;
+  cursor: pointer;
 }
 
-h4 {
-    font-family: NotoSansVariable;
-}
-
-p {
-    font-family: NotoSansRegular;
-}
 /* The switch - the box around the slider */
 .switch {
     position: relative;
@@ -58,11 +61,11 @@ p {
   }
   
   input:checked + .slider {
-    background-color: #2196F3;
+    background-color: hsl(3, 71%, 56%);
   }
   
   input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px hsl(3, 71%, 56%);
   }
   
   input:checked + .slider:before {
