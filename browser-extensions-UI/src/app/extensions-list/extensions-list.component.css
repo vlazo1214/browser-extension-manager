@@ -36,7 +36,9 @@
   outline-offset: 2px;
 }
 
+/* dont need this id using active */
 .ext-toggles button:focus {
+  border: none;
   background-color: hsl(3, 71%, 56%);
   color: hsl(200, 60%, 99%);
 }
@@ -64,6 +66,7 @@
 }
 
 .card button:hover {
+  background-color: hsl(0, 0%, 78%);
   outline: 2px solid hsl(3, 71%, 56%);
   outline-offset: 2px;
 }

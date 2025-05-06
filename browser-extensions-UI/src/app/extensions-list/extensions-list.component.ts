@@ -14,9 +14,11 @@ export class ExtensionsListComponent implements OnInit {
 
   extensions: Extension[] = [];
   filterText: 'all' | 'active' | 'inactive' = 'all';
+  buttons: Boolean[] = []
 
   ngOnInit() {
     this.getExtensions();
+    this.buttons[0] = true;
   }
 
   getExtensions(): void {

@@ -1,10 +1,10 @@
 <div class="ext-header">
     <h1>Extensions List</h1>
-    <span class="ext-toggles">
-        <button (click)="toggleFilter('all')" autofocus>All</button>
-        <button (click)="toggleFilter('active')">Active</button>
-        <button (click)="toggleFilter('inactive')">Inactive</button>
-    </span>
+    <div class="ext-toggles" [(ngModel)]="buttons">
+        <button (click)="toggleFilter('all')" [(ngModel)]="buttons[0]">All</button>
+        <button (click)="toggleFilter('active')" [(ngModel)]="buttons[1]">Active</button>
+        <button (click)="toggleFilter('inactive')" [(ngModel)]="buttons[2]">Inactive</button>
+    </div>
 </div>
 
 <div class="grid">

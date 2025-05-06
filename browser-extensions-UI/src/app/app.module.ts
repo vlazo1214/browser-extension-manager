@@ -7,6 +7,7 @@ import { InMemoryDataService } from './in-memory-storage.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ExtensionsListComponent } from './extensions-list/extensions-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ExtensionsListComponent } from './extensions-list/extensions-list.compo
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    ),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
