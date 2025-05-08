@@ -35,19 +35,18 @@ body {
 }
 
 .container {
-    width: 900px;
     max-width: 100%;
     padding: 15px;
-    margin: auto;
+    margin: 0.5%;
 }
 
-/* 
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
     body {
         margin: auto;
+        width: 1200px;
     }
 
-} */
+}
 
 .top-header {
     background-color: hsl(200, 60%, 99%);

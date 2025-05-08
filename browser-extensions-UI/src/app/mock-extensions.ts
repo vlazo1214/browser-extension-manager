@@ -43,4 +43,46 @@ export const MockExtensionList: Extension[] = [
         description: "Simulates various screen resolutions directly within the browser.",
         isActive: false
     },
+    {
+        id: 7,
+        logo: "./assets/images/logo-markup-notes.svg",
+        name: "Markup Notes",
+        description: "Enables annotation and notes directly onto webpages for collaborative debugging.",
+        isActive: true
+    },
+    {
+        id: 8,
+        logo: "./assets/images/logo-grid-guides.svg",
+        name: "GridGuides",
+        description: "Overlay customizable grids and alignment guides on any webpage.",
+        isActive: false
+    },
+    {
+        id: 9,
+        logo: "./assets/images/logo-palette-picker.svg",
+        name: "Palette Picker",
+        description: "Instantly extracts color palettes from any webpage.",
+        isActive: true
+    },
+    {
+        id: 10,
+        logo: "./assets/images/logo-link-checker.svg",
+        name: "LinkChecker",
+        description: "Scans and highlights broken links on any page.",
+        isActive: true
+    },
+    {
+        id: 11,
+        logo: "./assets/images/logo-dom-snapshot.svg",
+        name: "DOM Snapshot",
+        description: "Capture and export DOM structures quickly.",
+        isActive: false
+    },
+    {
+        id: 12,
+        logo: "./assets/images/logo-console-plus.svg",
+        name: "ConsolePlus",
+        description: "Enhanced developer console with advanced filtering and logging.",
+        isActive: true
+    }
 ]

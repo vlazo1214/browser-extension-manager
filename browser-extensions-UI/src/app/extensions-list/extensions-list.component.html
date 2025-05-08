@@ -1,18 +1,26 @@
 <div class="ext-header">
     <h1>Extensions List</h1>
-    <div class="ext-toggles" [(ngModel)]="buttons">
-        <button (click)="toggleFilter('all')" [(ngModel)]="buttons[0]">All</button>
-        <button (click)="toggleFilter('active')" [(ngModel)]="buttons[1]">Active</button>
-        <button (click)="toggleFilter('inactive')" [(ngModel)]="buttons[2]">Inactive</button>
+    <div class="ext-toggles">
+        <button (click)="toggleFilter('all')" [ngClass]="filterText == 'all' ? 'active' : '.ext-toggles button'">All</button>
+        <button (click)="toggleFilter('active')" [ngClass]="filterText == 'active' ? 'active' : '.ext-toggles button'">Active</button>
+        <button (click)="toggleFilter('inactive')" [ngClass]="filterText == 'inactive' ? 'active' : '.ext-toggles button'">Inactive</button>
     </div>
 </div>
 
 <div class="grid">
     <ul *ngFor="let extension of displayedExtensions" class="card">
-        <img [src]="extension.logo">
-        <span class="name">{{extension.name}}</span>
-        <span class="desc">{{extension.description}}</span>
-        <span class="button" (click)="removeExtension(extension)"><button>Remove</button></span>
-        <label class="switch"><input type="checkbox" [checked]="extension.isActive" (click)="toggleStatus(extension)"><span class="slider round"></span></label>
+        <div class="card-content">
+            <div class="card-img">
+                <img [src]="extension.logo">
+            </div>
+            <div class="text">
+                <span class="name">{{extension.name}}</span>
+                <span class="desc">{{extension.description}}</span>
+            </div>
+        </div>
+        <div class="card-buttons">
+                <span class="button" (click)="removeExtension(extension)"><button>Remove</button></span>
+                <label class="switch"><input type="checkbox" [checked]="extension.isActive" (click)="toggleStatus(extension)"><span class="slider round"></span></label>
+        </div>
     </ul>
 </div>
